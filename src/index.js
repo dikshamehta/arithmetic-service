@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const {add} = require("./arithmetica");
 
 const app = express();
 app.use(cors()) // accross origin resourse sharing - basically we accept requests from all domains
@@ -10,7 +11,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/add/:n/:m', (req, res) => {
-    res.json(Number(req.params.n)+Number(req.params.m)); 
+    let n = Number(req.params.n);
+    let m = Number(req.params.m);
+    let sum  = add(n,m);
+        res.json(sum);
 });
 
 app.listen(port)
