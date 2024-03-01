@@ -7,7 +7,7 @@ app.use(cors()) // accross origin resourse sharing - basically we accept request
 const port = 3000;
 
 app.get('/', (req, res) => {
-    res.send('Arithemetic service - Hello world!');
+    res.send('Arithemetic service - Hello world!!');
 });
 
 app.get('/add/:n/:m', (req, res) => {
